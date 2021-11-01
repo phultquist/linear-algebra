@@ -1,10 +1,5 @@
 import { Vector, Matrix } from '../../linalg/src/linalg.js';
 
-// proj of a onto b
-const proj = (a, b) => {
-    return b.clone().scale(a.dot(b) / b.dot(b));
-}
-
 // proj of v onto a where a is an array of bases
 const projOntoSubspace = (v, M) => {
     // result should have same dimensions as v
