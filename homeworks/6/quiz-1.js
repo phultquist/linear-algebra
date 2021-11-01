@@ -11,11 +11,11 @@ const projOntoSubspace = (v, M) => {
     return result;
 }
 
-const B1 = Vector.create(1, 0, -1).normalize();
-const B2 = Vector.create(1, 1, 1).normalize();
 const B1NN = Vector.create(1, 0, -1);
 const B2NN = Vector.create(1, 1, 1);
-const m = Matrix.create(B1, B2).transpose;
+const B1 = B1NN.clone().normalize();
+const B2 = B2NN.clone().normalize();
+const m = Matrix.create(B1NN, B2NN).transpose;
 
 const e1 = Vector.create(1, 0, 0);
 const e2 = Vector.create(0, 1, 0);
