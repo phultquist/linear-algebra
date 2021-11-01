@@ -17,6 +17,11 @@ const B1 = B1NN.clone().normalize();
 const B2 = B2NN.clone().normalize();
 const m = Matrix.create(B1NN, B2NN).transpose;
 
+if (B1.dot(B2) !== 0) {
+    console.log('\x1b[41m\x1b[36m', 'B1 and B2 are not orthogonal', '\x1b[0m');
+    process.exit()
+}
+
 const e1 = Vector.create(1, 0, 0);
 const e2 = Vector.create(0, 1, 0);
 const e3 = Vector.create(0, 0, 1);
